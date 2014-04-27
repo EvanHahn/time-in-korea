@@ -11,4 +11,5 @@ body {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
+  font-weight: bold;
 }

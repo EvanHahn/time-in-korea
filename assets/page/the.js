@@ -1,9 +1,16 @@
-/* globals crel, moment, startInterval */
+/* globals crel, moment, startInterval, fitText */
 
-var output = crel("div", { class: "output" });
+var $time = crel("div", { class: "time" });
+var $date = crel("div", { class: "date" });
 
 startInterval(function() {
-  output.innerHTML = moment().tz("Asia/Seoul").format("dddd, MMMM D, h:mm:ssa");
+  var time = moment().tz("Asia/Seoul");
+  $time.innerHTML = time.format("h:mm:ssa");
+  $date.innerHTML = time.format("dddd, MMMM D");
 }, 1000);
 
-document.body.appendChild(output);
+document.body.appendChild($time);
+document.body.appendChild($date);
+
+fitText($time);
+fitText($date, 1.8);
